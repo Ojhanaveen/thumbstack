@@ -1,0 +1,229 @@
+.mission-section {
+    padding: 120px 0;
+}
+
+.mission-card {
+    background-color: #1e1e1e;
+    border-radius: 40px;
+    padding: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    min-height: 600px;
+}
+
+.mission-content {
+    position: relative;
+    z-index: 2;
+}
+
+.mission-tag {
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 40px;
+    display: block;
+}
+
+.mission-title {
+    font-size: 80px;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--primary);
+    margin-bottom: 40px;
+    letter-spacing: -0.04em;
+}
+
+.mission-desc {
+    font-size: 22px;
+    color: white;
+    opacity: 0.9;
+    line-height: 1.4;
+    margin-bottom: 60px;
+    max-width: 480px;
+}
+
+.read-more-btn {
+    background-color: var(--primary);
+    color: #000;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.mission-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    min-height: 480px;
+}
+
+.europe-visual-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.europe-map-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 650px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: 1;
+    mix-blend-mode: screen;
+}
+
+.europe-map-image {
+    width: 100%;
+    height: auto;
+    filter: brightness(0.65) contrast(1.1) grayscale(1);
+}
+
+
+
+
+.stars-circle-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    height: 320px;
+    z-index: 2;
+}
+
+
+.star {
+    position: absolute;
+    color: white;
+    font-size: 32px;
+    line-height: 1;
+}
+
+/* Precise positioning for 12 stars in a circle */
+.star-1 {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.star-2 {
+    top: 7%;
+    right: 25%;
+}
+
+.star-3 {
+    top: 25%;
+    right: 7%;
+}
+
+.star-4 {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.star-5 {
+    bottom: 25%;
+    right: 7%;
+}
+
+.star-6 {
+    bottom: 7%;
+    right: 25%;
+}
+
+.star-7 {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.star-8 {
+    bottom: 7%;
+    left: 25%;
+}
+
+.star-9 {
+    bottom: 25%;
+    left: 7%;
+}
+
+.star-10 {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.star-11 {
+    top: 25%;
+    left: 7%;
+}
+
+.star-12 {
+    top: 7%;
+    left: 25%;
+}
+
+@media (max-width: 1200px) {
+    .mission-card {
+        padding: 60px;
+    }
+
+    .mission-title {
+        font-size: 60px;
+    }
+
+    .europe-visual-wrapper {
+        height: 400px;
+    }
+}
+
+@media (max-width: 992px) {
+    .mission-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .mission-desc {
+        margin: 0 auto 40px;
+    }
+
+    .read-more-btn {
+        justify-content: center;
+    }
+
+    .europe-visual-wrapper {
+        height: 300px;
+        margin-top: 40px;
+    }
+
+    .stars-circle-overlay {
+        width: 240px;
+        height: 240px;
+    }
+
+    .star {
+        font-size: 24px;
+    }
+}
