@@ -1,58 +1,61 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
+import { Brain, Cloud, Code, Database, LineChart, ShieldCheck } from 'lucide-react';
 
-const products = [
+const services = [
     {
-        title: "Apura IaaS.",
-        tag: "Run safely.",
-        description: "Apura IaaS is our secure cloud computing infrastructure built on our sovereign network to run your critical applications in a safe and secure cloud-native environment.",
-        color: "#E3FF73",
-        isPrimary: true
+        title: "AI & Machine Learning",
+        description: "Custom AI models, predictive analytics, and natural language processing to unlock new business capabilities.",
+        icon: <Brain className="w-8 h-8 text-blue-600" />
     },
     {
-        title: "Apura Workspace.",
-        tag: "Work privately.",
-        description: "Apura Workspace is a suite of collaborative tools designed to help teams work faster and smarter. Using our sovereign network, it keeps your communications private and encrypted at all times.",
-        color: "#EBEBEB",
-        isPrimary: false
+        title: "Cloud Infrastructure",
+        description: "Scalable, secure, and resilient cloud architecture design and seamless migration services.",
+        icon: <Cloud className="w-8 h-8 text-blue-600" />
     },
     {
-        title: "Apura Socials.",
-        tag: "Share confidently.",
-        description: "A suite of localized social media applications designed to empower and connect the European community on their terms.",
-        color: "#EBEBEB",
-        isPrimary: false
+        title: "DevOps & Automation",
+        description: "Streamline your development lifecycle with CI/CD pipelines, containerization, and IaC.",
+        icon: <Code className="w-8 h-8 text-blue-600" />
+    },
+    {
+        title: "Web & App Development",
+        description: "High-performance, responsive web and mobile applications built with modern frameworks.",
+        icon: <Database className="w-8 h-8 text-blue-600" />
+    },
+    {
+        title: "Data Analytics & BI",
+        description: "Transform raw data into actionable insights with interactive dashboards and reporting.",
+        icon: <LineChart className="w-8 h-8 text-blue-600" />
+    },
+    {
+        title: "IT Strategy Consulting",
+        description: "Expert guidance on digital transformation, technology stack selection, and IT roadmaps.",
+        icon: <ShieldCheck className="w-8 h-8 text-blue-600" />
     }
 ];
 
 const ProductCards = () => {
     return (
-        <section className="py-[120px]" id="products">
+        <section className="py-[100px] bg-bg-light" id="services">
             <div className="max-w-[1200px] mx-auto px-5">
-                <h2 className="text-2xl mb-[60px] font-medium opacity-80">Our products</h2>
-                <div className="grid grid-cols-3 gap-6 max-xl:grid-cols-1 max-xl:max-w-[500px] max-xl:mx-auto">
-                    {products.map((product, index) => (
+                <div className="text-center mb-[60px] max-w-[700px] mx-auto">
+                    <h2 className="text-accent text-sm font-bold tracking-widest uppercase mb-3">Our Expertise</h2>
+                    <h3 className="text-4xl md:text-5xl font-bold text-primary mb-6">Comprehensive Technical Services</h3>
+                    <p className="text-text-muted text-lg">We provide end-to-end consultancy and implementation to solve your most complex technical challenges.</p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {services.map((service, index) => (
                         <motion.div
                             key={index}
-                            className="p-12 rounded-[20px] flex flex-col justify-between min-h-[520px]"
-                            style={{ backgroundColor: product.color }}
-                            whileHover={{ y: -10 }}
-                            transition={{ type: "spring", stiffness: 300 }}
+                            className="bg-white p-8 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_40px_rgba(0,0,0,0.08)] transition-all duration-300 rounded-xl"
+                            whileHover={{ y: -5 }}
                         >
-                            <div>
-                                <span className="text-lg font-semibold mb-3 block">{product.tag}</span>
-                                <h3 className="text-2xl font-semibold mb-6">{product.title}</h3>
-                                <p className="text-[15px] leading-relaxed opacity-80">{product.description}</p>
+                            <div className="bg-blue-50 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                                {service.icon}
                             </div>
-                            <div className="flex flex-col gap-5">
-                                <button className="flex items-center gap-2 text-sm font-semibold opacity-60 hover:opacity-100">
-                                    Read more <ArrowUpRight size={18} />
-                                </button>
-                                {product.isPrimary && (
-                                    <button className="bg-primary-dark text-white p-4 rounded-xl font-semibold w-full">Book a demo</button>
-                                )}
-                            </div>
+                            <h4 className="text-xl font-bold text-primary mb-3">{service.title}</h4>
+                            <p className="text-text-muted leading-relaxed">{service.description}</p>
                         </motion.div>
                     ))}
                 </div>

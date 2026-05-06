@@ -1,19 +1,19 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Radio+Canada+Big:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 /* ── Tailwind v4 Theme Tokens ──────────────────────────────── */
 @theme {
-  --color-primary: #E3FF73;
-  --color-primary-dark: #121212;
-  --color-bg-dark: #000000;
-  --color-bg-light: #F8F9FA;
-  --color-text-main: #121212;
-  --color-text-muted: #666666;
-  --color-card-bg: #FFFFFF;
-  --color-card-dark: #1A1A1A;
+  --color-primary: #092530; /* Deep Navy from electioncenter */
+  --color-primary-dark: #112337;
+  --color-accent: #A01010; /* Red accent */
+  --color-accent-alt: #F59E0B; /* Amber from banner */
+  --color-bg-light: #FEFAF3; /* Off-white from electioncenter */
+  --color-bg-white: #FFFFFF;
+  --color-text-main: #112337;
+  --color-text-muted: #4B5563;
 
-  --font-main: 'Radio Canada Big', sans-serif;
-  --font-heading: 'Radio Canada Big', sans-serif;
+  --font-main: 'Inter', sans-serif;
+  --font-heading: 'Space Grotesk', sans-serif;
 }
 
 /* ── Base Layer ─────────────────────────────────────────────── */
@@ -36,6 +36,7 @@
     font-family: var(--font-heading);
     font-weight: 600;
     line-height: 1.2;
+    color: var(--color-primary);
   }
 
   a {
@@ -55,35 +56,4 @@
     font-family: inherit;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
-}
-
-/* ── Star positioning (complex nth-child that must remain in CSS) ── */
-@layer components {
-  /* MissionSection star circle */
-  .star-1  { top: 0;    left: 50%; transform: translateX(-50%); }
-  .star-2  { top: 7%;   right: 25%; }
-  .star-3  { top: 25%;  right: 7%; }
-  .star-4  { top: 50%;  right: 0;  transform: translateY(-50%); }
-  .star-5  { bottom: 25%; right: 7%; }
-  .star-6  { bottom: 7%;  right: 25%; }
-  .star-7  { bottom: 0;   left: 50%; transform: translateX(-50%); }
-  .star-8  { bottom: 7%;  left: 25%; }
-  .star-9  { bottom: 25%; left: 7%; }
-  .star-10 { top: 50%;  left: 0;  transform: translateY(-50%); }
-  .star-11 { top: 25%;  left: 7%; }
-  .star-12 { top: 7%;   left: 25%; }
-
-  /* Footer star circle (nth-child based) */
-  .star-mini:nth-child(1)  { top: 0;    left: 50%; transform: translateX(-50%); }
-  .star-mini:nth-child(2)  { top: 7%;   right: 25%; }
-  .star-mini:nth-child(3)  { top: 25%;  right: 7%; }
-  .star-mini:nth-child(4)  { top: 50%;  right: 0;  transform: translateY(-50%); }
-  .star-mini:nth-child(5)  { bottom: 25%; right: 7%; }
-  .star-mini:nth-child(6)  { bottom: 7%;  right: 25%; }
-  .star-mini:nth-child(7)  { bottom: 0;   left: 50%; transform: translateX(-50%); }
-  .star-mini:nth-child(8)  { bottom: 7%;  left: 25%; }
-  .star-mini:nth-child(9)  { bottom: 25%; left: 7%; }
-  .star-mini:nth-child(10) { top: 50%;  left: 0;  transform: translateY(-50%); }
-  .star-mini:nth-child(11) { top: 25%;  left: 7%; }
-  .star-mini:nth-child(12) { top: 7%;   left: 25%; }
 }

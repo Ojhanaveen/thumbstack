@@ -5,8 +5,7 @@ import JoinSection from './components/JoinSection';
 import ProductCards from './components/ProductCards';
 import MissionSection from './components/MissionSection';
 import Roadmap from './components/Roadmap';
-import EuropeMapSVG from './components/EuropeMapSVG';
-import { Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from 'lucide-react';
 
 function App() {
   return (
@@ -14,94 +13,92 @@ function App() {
       <Navbar />
       <Hero />
       <JoinSection />
-
-      <section className="py-[160px] text-left px-5 md:px-10" id="governance">
-        <div className="max-w-[1400px] mx-auto px-10">
-          <h2 className="text-[64px] max-md:text-[40px] leading-[1.05] font-medium tracking-[-0.04em] max-w-[900px]">
-            APURA is an ecosystem <span className="italic font-normal">dedicated</span> to the privacy and security of their users; completely build from scratch.
-          </h2>
-        </div>
-      </section>
-
       <ProductCards />
       <MissionSection />
       <Roadmap />
 
-      <section className="py-[100px] border-t border-black/5 text-center px-5 md:px-10" id="careers">
-        <div className="max-w-[1400px] mx-auto px-10">
-          <p className="text-[28px] font-medium mb-[30px]">Become a supporter and help us on our Journey</p>
-          <button className="text-base font-medium border border-black py-3 px-8 rounded-full bg-transparent">
-            Read more about how to {'—>'}
-          </button>
-        </div>
-      </section>
-
-      <section className="bg-primary py-[100px]">
-        <div className="max-w-[1200px] mx-auto px-5 flex justify-between items-center gap-20 max-lg:flex-col max-lg:text-center max-lg:gap-10">
-          <div>
-            <h2 className="text-5xl font-medium mb-6 text-black tracking-[-0.02em]">Subscribe to our Newsletter</h2>
-            <p className="text-lg max-w-[440px] text-black opacity-90 leading-[1.4]">If you want to follow our progress on developing what Europeans want and need, done by Europeans.</p>
-          </div>
-          <div className="flex w-full max-w-[580px] bg-black/5 p-px rounded-xl border border-black/80">
-            <input type="email" placeholder="Enter your email" className="flex-1 py-[18px] px-6 border-none bg-transparent text-sm text-black outline-none placeholder:text-black/80 placeholder:font-medium" />
-            <button className="bg-white text-black px-10 rounded-r-[11px] font-medium text-[13px] border-l border-black/80 whitespace-nowrap">Subscribe to our newsletter</button>
+      {/* CTA / Newsletter Section */}
+      <section className="bg-bg-light py-[100px] border-b border-gray-200">
+        <div className="max-w-[1000px] mx-auto px-5 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">Ready to Transform Your Business?</h2>
+          <p className="text-lg text-text-muted mb-10 max-w-[600px] mx-auto">
+            Subscribe to our newsletter for the latest insights in AI, automation, and cloud technology, or reach out directly to start your project.
+          </p>
+          <div className="flex w-full max-w-[500px] mx-auto bg-white shadow-sm rounded-lg border border-gray-200 overflow-hidden">
+            <input type="email" placeholder="Enter your email address" className="flex-1 py-4 px-6 border-none bg-transparent text-sm text-primary outline-none" />
+            <button className="bg-accent hover:bg-red-800 text-white px-8 font-medium text-sm transition-colors">Subscribe</button>
           </div>
         </div>
       </section>
 
-      <footer className="bg-[#1a1a1a] text-white pt-[100px] pb-[60px]" id="contact">
-        <div className="max-w-[1200px] mx-auto px-5 flex justify-between items-start relative max-lg:flex-col max-lg:gap-[60px]">
-          <div className="flex-1 flex flex-col h-full">
-            <div className="text-xl font-bold mb-[60px] text-white">APURA CLOUD</div>
-
-            <div className="flex gap-[100px] mb-[150px] max-xl:gap-[60px] max-lg:flex-wrap max-lg:mb-[60px]">
-              <div>
-                <h4 className="text-sm text-[#666] mb-[30px] font-medium">Products</h4>
-                <ul className="list-none flex flex-col gap-4">
-                  <li className="text-sm font-semibold text-white">Apura IaaS</li>
-                  <li className="text-sm font-semibold text-white">Apura Workspace</li>
-                  <li className="text-sm font-semibold text-white">Apura Socials</li>
-                </ul>
+      {/* Footer */}
+      <footer className="bg-primary text-white pt-[80px] pb-10" id="contact">
+        <div className="max-w-[1200px] mx-auto px-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-[60px]">
+            {/* Brand */}
+            <div>
+              <div className="flex text-2xl font-bold font-heading tracking-tight mb-6">
+                  <span className="text-[#3B82F6]">Flow</span>
+                  <span className="text-[#10B981]">Automate</span>
+                  <span className="text-[#F59E0B] ml-2">AI</span>
               </div>
-              <div>
-                <h4 className="text-sm text-[#666] mb-[30px] font-medium">Roadmap</h4>
-                <ul className="list-none flex flex-col gap-4">
-                  <li className="text-sm font-semibold text-white">Stage 1</li>
-                  <li className="text-sm font-semibold text-white">Stage 2</li>
-                  <li className="text-sm font-semibold text-white">Stage 3</li>
-                  <li className="text-sm font-semibold text-white">Stage 4</li>
-                  <li className="text-sm font-semibold text-white">Stage 5</li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-sm text-[#666] mb-[30px] font-medium">Legal</h4>
-                <ul className="list-none flex flex-col gap-4">
-                  <li className="text-sm font-semibold text-white">Help us on our journey</li>
-                  <li className="text-sm font-semibold text-white">Terms & Conditions</li>
-                  <li className="text-sm font-semibold text-white">Privacy Policy</li>
-                </ul>
+              <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                Optimizing operations, automating workflows, and evolving businesses through premium technical consultancy.
+              </p>
+              <div className="flex gap-4">
+                <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-accent transition-colors"><Linkedin size={18} /></a>
+                <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-accent transition-colors"><Twitter size={18} /></a>
+                <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-accent transition-colors"><Facebook size={18} /></a>
               </div>
             </div>
 
-            <div className="mt-auto">
-              <div className="flex gap-5 mb-[30px]">
-                <Facebook size={20} className="text-primary cursor-pointer transition-opacity duration-300 hover:opacity-80" />
-                <Instagram size={20} className="text-primary cursor-pointer transition-opacity duration-300 hover:opacity-80" />
-                <Twitter size={20} className="text-primary cursor-pointer transition-opacity duration-300 hover:opacity-80" />
-                <Youtube size={20} className="text-primary cursor-pointer transition-opacity duration-300 hover:opacity-80" />
-              </div>
-              <p className="text-[13px] font-medium text-[#666]">© 2025 Apura Cloud. All rights reserved.</p>
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-lg font-bold mb-6">Quick Links</h4>
+              <ul className="flex flex-col gap-3">
+                <li><a href="#services" className="text-gray-400 hover:text-white transition-colors text-sm">Our Services</a></li>
+                <li><a href="#process" className="text-gray-400 hover:text-white transition-colors text-sm">How It Works</a></li>
+                <li><a href="#about" className="text-gray-400 hover:text-white transition-colors text-sm">About Us</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">Case Studies</a></li>
+              </ul>
+            </div>
+
+            {/* Services */}
+            <div>
+              <h4 className="text-lg font-bold mb-6">Services</h4>
+              <ul className="flex flex-col gap-3">
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">AI & Machine Learning</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">Cloud Infrastructure</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">DevOps & Automation</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">Data Analytics</a></li>
+              </ul>
+            </div>
+
+            {/* Contact */}
+            <div>
+              <h4 className="text-lg font-bold mb-6">Contact Us</h4>
+              <ul className="flex flex-col gap-4">
+                <li className="flex items-start gap-3">
+                  <MapPin size={20} className="text-accent shrink-0 mt-0.5" />
+                  <span className="text-gray-400 text-sm">123 Innovation Drive, Tech District, NY 10001</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Phone size={20} className="text-accent shrink-0" />
+                  <span className="text-gray-400 text-sm">+1 (555) 123-4567</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Mail size={20} className="text-accent shrink-0" />
+                  <span className="text-gray-400 text-sm">hello@flowautomate.ai</span>
+                </li>
+              </ul>
             </div>
           </div>
 
-          <div className="relative w-[500px] h-[400px] flex justify-center items-center max-lg:w-full max-lg:h-[300px] max-lg:justify-center">
-            <div className="w-full h-full relative flex justify-center items-center">
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-auto opacity-15 mix-blend-screen">
-                <img src="/europe-map-visual.png" alt="Europe Map" className="w-full h-auto brightness-[0.6] contrast-[1.1] grayscale" />
-              </div>
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[160px] h-[160px] z-[2]">
-                {[...Array(12)].map((_, i) => <div key={i} className="star-mini absolute text-white text-xl leading-none">★</div>)}
-              </div>
+          <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-gray-400 text-sm">© {new Date().getFullYear()} FlowAutomate AI. All rights reserved.</p>
+            <div className="flex gap-6">
+              <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">Privacy Policy</a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">Terms of Service</a>
             </div>
           </div>
         </div>

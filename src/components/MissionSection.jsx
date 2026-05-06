@@ -1,35 +1,45 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 
 const MissionSection = () => {
     return (
-        <section className="py-[120px]">
+        <section className="py-[100px] bg-white" id="about">
             <div className="max-w-[1200px] mx-auto px-5">
-                <div className="bg-[#1e1e1e] rounded-[40px] p-[100px] grid grid-cols-2 gap-20 items-center overflow-hidden relative min-h-[600px] max-xl:p-[60px] max-lg:grid-cols-1 max-lg:text-center">
-                    <div className="relative z-[2]">
-                        <span className="text-sm font-semibold text-white mb-10 block">About us</span>
-                        <h2 className="text-[80px] max-xl:text-[60px] font-semibold leading-none text-primary mb-10 tracking-[-0.04em]">
-                            By Europeans, <br />for Europeans
-                        </h2>
-                        <p className="text-[22px] text-white opacity-90 leading-[1.4] mb-[60px] max-w-[480px] max-lg:mx-auto max-lg:mb-10">
-                            Our vision is to empower governments, organizations and individuals with control and independence in the online realm.
-                        </p>
-                        <button className="bg-primary text-black py-4 px-8 rounded-xl font-semibold text-base inline-flex items-center gap-3 cursor-pointer max-lg:justify-center">
-                            Read more about us <ArrowRight size={18} />
-                        </button>
-                    </div>
-                    <div className="relative flex justify-center items-center h-full min-h-[480px] max-xl:min-h-[400px] max-lg:min-h-[300px] max-lg:mt-10">
-                        <div className="relative w-full h-full flex justify-center items-center">
-                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-auto flex justify-center items-center opacity-70 pointer-events-none z-[1] mix-blend-screen">
-                                <img src="/europe-map-visual.png" alt="Europe Map" className="w-full h-auto brightness-[0.65] contrast-[1.1] grayscale" />
-                            </div>
-                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] z-[2] max-lg:w-[240px] max-lg:h-[240px]">
-                                {[...Array(12)].map((_, i) => (
-                                    <div key={i} className={`absolute text-white text-[32px] leading-none max-lg:text-2xl star-${i + 1}`}>★</div>
-                                ))}
-                            </div>
+                <div className="flex flex-col lg:flex-row gap-16 items-center">
+                    <div className="flex-1">
+                        <div className="relative">
+                            <div className="absolute -top-4 -left-4 w-24 h-24 bg-accent/10 rounded-full blur-xl"></div>
+                            <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-blue-600/10 rounded-full blur-xl"></div>
+                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Team working" className="rounded-2xl shadow-xl relative z-10 w-full h-[500px] object-cover" />
                         </div>
+                    </div>
+                    <div className="flex-1">
+                        <span className="text-accent text-sm font-bold tracking-widest uppercase mb-3 block">Why Choose Us</span>
+                        <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6 leading-tight">
+                            Empowering Your Business Through Technology
+                        </h2>
+                        <p className="text-lg text-text-muted mb-8 leading-relaxed">
+                            At FlowAutomate AI, we believe that technology should be an enabler, not a bottleneck. We partner with forward-thinking organizations to optimize their operations, automate repetitive tasks, and evolve their business models for the digital age.
+                        </p>
+
+                        <div className="flex flex-col gap-5 mb-10">
+                            {[
+                                "Expert team with deep industry knowledge",
+                                "Tailored solutions for your specific needs",
+                                "Focus on scalable and secure architecture",
+                                "Commitment to long-term client success"
+                            ].map((item, i) => (
+                                <div key={i} className="flex items-center gap-3">
+                                    <CheckCircle2 className="text-green-500 w-6 h-6 flex-shrink-0" />
+                                    <span className="text-primary font-medium">{item}</span>
+                                </div>
+                            ))}
+                        </div>
+
+                        <a href="#contact" className="bg-primary text-white px-8 py-4 rounded-md font-medium hover:bg-primary-dark transition-colors inline-block">
+                            Learn More About Us
+                        </a>
                     </div>
                 </div>
             </div>

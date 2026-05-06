@@ -1,29 +1,36 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Menu } from 'lucide-react';
 
 const Navbar = () => {
     return (
         <motion.nav
             initial={{ y: -100 }}
             animate={{ y: 0 }}
-            className="fixed top-0 left-0 right-0 py-[30px] bg-primary z-[1000] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]"
+            className="fixed top-0 left-0 right-0 py-5 bg-primary z-[1000] shadow-md"
         >
             <div className="max-w-[1200px] mx-auto px-5 flex justify-between items-center">
-                <div>
-                    <span className="font-bold text-xl tracking-tight text-black">APURA</span>
+                <div className="flex items-center gap-2">
+                    <div className="flex text-2xl font-bold font-heading tracking-tight">
+                        <span className="text-[#3B82F6]">Flow</span>
+                        <span className="text-[#10B981]">Automate</span>
+                        <span className="text-[#F59E0B] ml-2">AI</span>
+                    </div>
                 </div>
-                <ul className="hidden lg:flex justify-center gap-10 list-none m-0 p-0">
-                    <li><a href="#products" className="flex items-center gap-1 text-sm font-medium text-text-main opacity-80 hover:opacity-100 hover:text-primary-dark">Products <ChevronDown size={14} /></a></li>
-                    <li><a href="#roadmap" className="flex items-center gap-1 text-sm font-medium text-text-main opacity-80 hover:opacity-100 hover:text-primary-dark">Road map <ChevronDown size={14} /></a></li>
-                    <li><a href="#mission" className="text-sm font-medium text-text-main opacity-80 hover:opacity-100 hover:text-primary-dark">Our mission</a></li>
-                    <li><a href="#devs" className="text-sm font-medium text-text-main opacity-80 hover:opacity-100 hover:text-primary-dark">For devs</a></li>
-                    <li><a href="#contact" className="text-sm font-medium text-text-main opacity-80 hover:opacity-100 hover:text-primary-dark">Contact us</a></li>
+                <ul className="hidden lg:flex justify-center gap-8 list-none m-0 p-0">
+                    <li><a href="#services" className="text-sm font-medium text-white opacity-90 hover:opacity-100 hover:text-accent-alt transition-colors">Services</a></li>
+                    <li><a href="#process" className="text-sm font-medium text-white opacity-90 hover:opacity-100 hover:text-accent-alt transition-colors">How it Works</a></li>
+                    <li><a href="#about" className="text-sm font-medium text-white opacity-90 hover:opacity-100 hover:text-accent-alt transition-colors">About Us</a></li>
+                    <li><a href="#contact" className="text-sm font-medium text-white opacity-90 hover:opacity-100 hover:text-accent-alt transition-colors">Contact</a></li>
                 </ul>
-                <div className="flex justify-end">
-                    <button className="flex lg:hidden flex-col gap-1.5">
-                        <span className="w-6 h-0.5 bg-text-main rounded-sm"></span>
-                        <span className="w-6 h-0.5 bg-text-main rounded-sm"></span>
+                <div className="hidden lg:flex">
+                    <a href="#contact" className="bg-accent text-white px-6 py-2.5 rounded-md font-medium text-sm hover:bg-red-800 transition-colors">
+                        Get Started
+                    </a>
+                </div>
+                <div className="flex lg:hidden">
+                    <button className="text-white p-2">
+                        <Menu size={24} />
                     </button>
                 </div>
             </div>
