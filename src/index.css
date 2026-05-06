@@ -1,117 +1,89 @@
+@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Radio+Canada+Big:wght@400;500;600;700&display=swap');
 
-:root {
-  /* Colors */
-  --primary: #E3FF73;
-  /* The signature lime yellow */
-  --primary-dark: #121212;
-  --bg-dark: #000000;
-  --bg-light: #F8F9FA;
-  --text-main: #121212;
-  --text-muted: #666666;
-  --white: #FFFFFF;
-  --card-bg: #FFFFFF;
-  --card-dark: #1A1A1A;
+/* ── Tailwind v4 Theme Tokens ──────────────────────────────── */
+@theme {
+  --color-primary: #E3FF73;
+  --color-primary-dark: #121212;
+  --color-bg-dark: #000000;
+  --color-bg-light: #F8F9FA;
+  --color-text-main: #121212;
+  --color-text-muted: #666666;
+  --color-card-bg: #FFFFFF;
+  --color-card-dark: #1A1A1A;
 
-  /* Typography */
   --font-main: 'Radio Canada Big', sans-serif;
   --font-heading: 'Radio Canada Big', sans-serif;
-
-
-  /* Spacing */
-  --section-padding: 80px 20px;
-  --max-width: 1200px;
-
-  /* Transitions */
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: var(--font-main);
-  background-color: var(--bg-light);
-  color: var(--text-main);
-  line-height: 1.5;
-  overflow-x: hidden;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-heading);
-  font-weight: 600;
-  line-height: 1.2;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-  transition: var(--transition);
-}
-
-ul {
-  list-style: none;
-}
-
-button {
-  cursor: pointer;
-  border: none;
-  background: none;
-  font-family: inherit;
-  transition: var(--transition);
-}
-
-.container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.btn {
-  padding: 12px 24px;
-  border-radius: 99px;
-  font-weight: 500;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-
-.btn-primary {
-  background-color: var(--primary-dark);
-  color: var(--white);
-}
-
-.btn-primary:hover {
-  background-color: #333;
-  transform: translateY(-2px);
-}
-
-.btn-outline {
-  border: 1px solid var(--primary-dark);
-  color: var(--primary-dark);
-}
-
-.btn-outline:hover {
-  background-color: var(--primary-dark);
-  color: var(--white);
-}
-
-/* Base Utility Classes */
-.section {
-  padding: var(--section-padding);
-}
-
-@media (max-width: 768px) {
-  :root {
-    --section-padding: 50px 15px;
+/* ── Base Layer ─────────────────────────────────────────────── */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
+
+  body {
+    font-family: var(--font-main);
+    background-color: var(--color-bg-light);
+    color: var(--color-text-main);
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: inherit;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+/* ── Star positioning (complex nth-child that must remain in CSS) ── */
+@layer components {
+  /* MissionSection star circle */
+  .star-1  { top: 0;    left: 50%; transform: translateX(-50%); }
+  .star-2  { top: 7%;   right: 25%; }
+  .star-3  { top: 25%;  right: 7%; }
+  .star-4  { top: 50%;  right: 0;  transform: translateY(-50%); }
+  .star-5  { bottom: 25%; right: 7%; }
+  .star-6  { bottom: 7%;  right: 25%; }
+  .star-7  { bottom: 0;   left: 50%; transform: translateX(-50%); }
+  .star-8  { bottom: 7%;  left: 25%; }
+  .star-9  { bottom: 25%; left: 7%; }
+  .star-10 { top: 50%;  left: 0;  transform: translateY(-50%); }
+  .star-11 { top: 25%;  left: 7%; }
+  .star-12 { top: 7%;   left: 25%; }
+
+  /* Footer star circle (nth-child based) */
+  .star-mini:nth-child(1)  { top: 0;    left: 50%; transform: translateX(-50%); }
+  .star-mini:nth-child(2)  { top: 7%;   right: 25%; }
+  .star-mini:nth-child(3)  { top: 25%;  right: 7%; }
+  .star-mini:nth-child(4)  { top: 50%;  right: 0;  transform: translateY(-50%); }
+  .star-mini:nth-child(5)  { bottom: 25%; right: 7%; }
+  .star-mini:nth-child(6)  { bottom: 7%;  right: 25%; }
+  .star-mini:nth-child(7)  { bottom: 0;   left: 50%; transform: translateX(-50%); }
+  .star-mini:nth-child(8)  { bottom: 7%;  left: 25%; }
+  .star-mini:nth-child(9)  { bottom: 25%; left: 7%; }
+  .star-mini:nth-child(10) { top: 50%;  left: 0;  transform: translateY(-50%); }
+  .star-mini:nth-child(11) { top: 25%;  left: 7%; }
+  .star-mini:nth-child(12) { top: 7%;   left: 25%; }
 }

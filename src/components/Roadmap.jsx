@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import './Roadmap.css';
 
 const stages = [
     {
@@ -46,33 +45,45 @@ const stages = [
 
 const Roadmap = () => {
     return (
-        <section className="roadmap-section" id="roadmap">
-            <div className="container">
-                <h2 className="roadmap-heading">Our Road to Creating Data Ownership and Security</h2>
+        <section className="py-[120px]" id="roadmap">
+            <div className="max-w-[1200px] mx-auto px-5">
+                <h2 className="text-5xl max-w-[600px] mb-20 leading-[1.05] font-semibold text-center mx-auto tracking-[-0.02em]">
+                    Our Road to Creating Data Ownership and Security
+                </h2>
 
-                <div className="stages-list">
+                <div className="flex flex-col">
                     {stages.map((item, index) => (
                         <motion.div
                             key={index}
-                            className={`stage-item ${item.isCurrent ? 'active' : ''}`}
+                            className={`grid grid-cols-[320px_1fr_200px] items-center py-10 border-b border-black/10 transition-all duration-300 ease-in-out max-[1100px]:grid-cols-1 max-[1100px]:gap-5 max-[1100px]:py-[30px] max-[1100px]:px-5 ${
+                                item.isCurrent
+                                    ? 'bg-primary -mx-10 px-10 rounded-2xl border-b-0'
+                                    : ''
+                            }`}
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ delay: index * 0.1 }}
                             viewport={{ once: true }}
                         >
-                            <div className="stage-left">
-                                <span className="stage-number">{item.stage}</span>
-                                <h3 className="stage-title">{item.title}</h3>
+                            <div className="flex items-center gap-[60px] max-[1100px]:gap-[30px]">
+                                <span className="text-sm font-medium opacity-60">{item.stage}</span>
+                                <h3 className="text-2xl font-semibold">{item.title}</h3>
                             </div>
-                            <div className="stage-center">
-                                {item.description && <p className="stage-desc">{item.description}</p>}
+                            <div className="pr-[60px] max-[1100px]:pr-0">
+                                {item.description && <p className="text-sm opacity-60 max-w-[480px] leading-normal">{item.description}</p>}
                             </div>
-                            <div className="stage-right">
-                                <div className="stage-action-row">
-                                    <button className={`stage-btn ${item.isCurrent ? 'btn-active' : ''} ${item.isComingSoon ? 'btn-faded' : ''}`}>
+                            <div className="flex justify-end max-[1100px]:justify-start">
+                                <div className="flex items-center gap-5">
+                                    <button className={`text-[13px] font-semibold py-2 px-6 rounded-lg cursor-pointer ${
+                                        item.isCurrent
+                                            ? 'bg-white border-none shadow-[0_4px_12px_rgba(0,0,0,0.05)]'
+                                            : item.isComingSoon
+                                                ? 'opacity-40 bg-transparent border-none'
+                                                : 'bg-white border border-black/10'
+                                    }`}>
                                         {item.buttonText}
                                     </button>
-                                    <ArrowRight size={18} className="arrow-icon" />
+                                    <ArrowRight size={18} className="opacity-40" />
                                 </div>
                             </div>
                         </motion.div>
